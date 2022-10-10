@@ -1,0 +1,23 @@
+{
+  "name": "s3-read-write",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gilbertVirgo/s3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gilbertVirgo/s3/issues"
+  },
+  "homepage": "https://github.com/gilbertVirgo/s3#readme",
+  "dependencies": {
+    "aws-sdk": "^2.1231.0"
+  }
+}
