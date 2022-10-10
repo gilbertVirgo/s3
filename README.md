@@ -11,10 +11,13 @@ Could not make _any_ sense of the stupid AWS documentation.
 `npm i s3-read-write`
 
 ```javascript
-const s3 = require("s3-read-write");
-// alternatively...
-const {read, write, delete} = require("s3-read-write");
+const S3RW = require("s3-read-write");
 
+const s3 = new S3RW({
+	accessKeyId: "YOUR_KEY_HERE",
+	secretAccessKey: "YOUR_SECRET_HERE",
+	Bucket: "YOUR_BUCKET_NAME_HERE",
+});
 ```
 
 ### Write
@@ -22,11 +25,9 @@ const {read, write, delete} = require("s3-read-write");
 Within an `async` function.
 
 ```javascript
-const contents = JSON.stringify({
-	hello: "world",
-});
+const contents = "Hello world!";
 
-await s3.write(contents, "hello-world.json");
+await s3.write(contents, "hello-world.txt");
 ```
 
 ### Read
@@ -34,12 +35,9 @@ await s3.write(contents, "hello-world.json");
 Within an `async` function.
 
 ```javascript
-const contents = JSON.stringify({
-	hello: "world",
-});
+const contents = await s3.read("hello-world.txt");
 
-const data = await s3.read("hello-world.json");
-console.log(data); // {"hello": "world"}
+console.log(contents); // Hello world!
 ```
 
 ### Delete
@@ -47,5 +45,5 @@ console.log(data); // {"hello": "world"}
 Within an `async` function.
 
 ```javascript
-await s3.delete("hello-world.json");
+await s3.delete("hello-world.txt");
 ```
