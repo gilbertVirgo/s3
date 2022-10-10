@@ -1,9 +1,11 @@
-const S3 = require(".");
+const S3RW = require(".");
 
-const s3 = new S3({
-	accessKeyId: "YOUR_KEY_HERE",
-	secretAccessKey: "YOUR_SECRET_HERE",
-	Bucket: "YOUR_BUCKET_NAME_HERE",
+const { ACCESS_KEY_ID, SECRET_ACCESS_KEY, BUCKET } = process.env;
+
+const s3 = new S3RW({
+	accessKeyId: ACCESS_KEY_ID,
+	secretAccessKey: SECRET_ACCESS_KEY,
+	Bucket: BUCKET,
 });
 
 (async function () {
