@@ -47,3 +47,15 @@ Within an `async` function.
 ```javascript
 await s3.delete("hello-world.txt");
 ```
+
+# Testing
+
+```bash
+$ ACCESS_KEY_ID=... SECRET_ACCESS_KEY=... BUCKET=... npm test
+```
+
+This will attempt to
+
+1. Create a file in your bucket called "hello-world.txt" (contents: "Hello world").
+2. Read that file from AWS.
+3. Delete that file from your bucket.
