@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const S3RW = require(".");
 
 const s3 = new S3RW({
