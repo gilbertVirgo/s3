@@ -3,9 +3,9 @@ require("dotenv").config();
 const S3RW = require(".");
 
 const s3 = new S3RW({
-	accessKeyId: ACCESS_KEY_ID,
-	secretAccessKey: SECRET_ACCESS_KEY,
-	Bucket: BUCKET,
+	accessKeyId: process.env.ACCESS_KEY_ID,
+	secretAccessKey: process.env.SECRET_ACCESS_KEY,
+	Bucket: process.env.BUCKET,
 });
 
 (async function () {
