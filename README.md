@@ -48,6 +48,14 @@ Within an `async` function.
 await s3.delete("hello-world.txt");
 ```
 
+### Exists?
+
+Within an `async` function.
+
+```javascript
+await s3.exists("hello-world.txt"); // boolean output
+```
+
 # Testing
 
 ```bash
