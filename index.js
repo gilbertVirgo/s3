@@ -7,6 +7,21 @@ function S3({ accessKeyId, secretAccessKey, Bucket }) {
 		Bucket,
 	});
 
+	this.exists = function (Key) {
+		return new Promise((resolve, reject) => {
+			s3Instance.headObject(
+				{
+					Key,
+					Bucket,
+				},
+				(err, data) => {
+					if (err && err.name === "NotFound") resolve(false);
+					else if (err) reject(err);
+					else resolve(true);
+				}
+			);
+		});
+	};
 	this.read = function (Key) {
 		return new Promise((resolve, reject) => {
 			s3Instance.getObject(

@@ -1,7 +1,5 @@
 const S3RW = require(".");
 
-const { ACCESS_KEY_ID, SECRET_ACCESS_KEY, BUCKET } = process.env;
-
 const s3 = new S3RW({
 	accessKeyId: ACCESS_KEY_ID,
 	secretAccessKey: SECRET_ACCESS_KEY,

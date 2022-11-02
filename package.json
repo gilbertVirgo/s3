@@ -19,5 +19,8 @@
 	"homepage": "https://github.com/gilbertVirgo/s3#readme",
 	"dependencies": {
 		"aws-sdk": "^2.1231.0"
+	},
+	"devDependencies": {
+		"dotenv": "^16.0.3"
 	}
 }
